@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEC ERP</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0398B9;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 1.2vw;
+      height: 4vw;
+    }
+
+    .project-name {
+      color: #fff;
+      font-size: 1.2vw;
+      width: 12vw;
+      margin-left: 4vw;
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      margin-left: 20px;
+      padding-top: 3vw;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding-bottom: 1vw;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 17vw 1fr;
+      height: calc(100vh-4vw);
+    }
+
+    .sidebar {
+      background-color: #A4E5FD;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar-inner {
+      background-color: #0398B9;
+      border-radius: 10px;
+      height: 100%;
+      box-sizing: border-box;
+      padding-left: 0.5vw;
+      padding-top: 1vw;
+
+    }
+
+    .content {
+      background-color: #A4E5FD;
+      padding-left: 0VW;
+      padding-top: 20px;
+    }
+
+    .content-inner {
+      background-color: #D6F7FF;
+      border-radius: 10px;
+      height: 100%;
+      box-sizing: border-box;
+      padding-right: 1vw;
+    }
+
+    .side-nav-bar {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      height: 42vw;
+    }
+
+    .side-nav-bar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      flex: 1;
+      font-size: 1.2vw;
+      align-items: center;
+      margin-left: 1vw;
+      padding: 1vw;
+      transition: transform 0.3s ease;
+    }
+
+    .side-nav-bar a.active {
+      background-color: #A4E5FD;
+      color: #000000;
+      box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 40px 0 0 40px;
+      margin-left: 0.6vw;
+      margin-bottom: 1vw;
+      transform: scale(1.1);
+    }
+
+    .side-nav-bar h1 {
+      background-color: #006C85;
+      color: #fff;
+      padding: 0.5vw;
+      border-radius: 10px;
+      margin-left: 0.2vw;
+      margin-right: 0.8vw;
+      margin-bottom: 2vw;
+    }
+    .profile-link {
+      background-color: #A4E5FD;
+      padding: 0.5vw 1vw;
+      border-radius: 1vw 1vw 0 0;
+      margin-left: 0;
+      padding-top: 10px;
+      height: 3vw;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="project-name">PEC ERP</div>
+    <nav class="nav-bar">
+      <a href="#Profile" class="profile-link">Profile</a>
+      <a href="#Time Table">Time Table</a>
+      <a href="#Academic Result">Academic Result</a>
+      <a href="#Documents">Documents</a>
+      <a href="#Certifications">Certifications</a>
+      <a href="#Lesson Plan">Lesson Plan</a>
+      <a href="#Feedback">Feedback</a>
+    </nav>
+  </header>
+  <div class="main-grid">
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <nav class="side-nav-bar">
+          <h1>Dashboard</h1>
+          <a href="#Academic Module" class="active" data-module="academic">Academic Module</a>
+          <a href="#Attendance Module" data-module="attendance">Attendance Module</a>
+          <a href="#Assignment Module" data-module="assignment">Assignment Module</a>
+          <a href="#Document Module" data-module="document">Document Module</a>
+          <a href="#Examination Module" data-module="examination">Examination Module</a>
+          <a href="#Communication Module" data-module="communication">Communication Module</a>
+          <a href="#Report Module" data-module="report">Report Module</a>
+          <a href="#Research Module" data-module="research">Research Module</a>
+          <a href="#Survey Module" data-module="survey">Survey Module</a>
+        </nav>
+
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarLinks = document.querySelectorAll('.side-nav-bar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          sidebarLinks.forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
